@@ -1,0 +1,170 @@
+<header class="header" id="header">
+  <div class="header__container container">
+    <a class="logo" href="./index.html">
+      <svg class="logo-icon" width="199" height="50">
+        <use href="./images/icons.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <nav class="nav">
+      <ul class="nav__list list">
+        <li class="nav__item">
+          <a class="nav__link link curent" href=".">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link link" href="#advantages">About us</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link link" href="#about">How it’s made?</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link link" href="#products">Our products</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link link" href="#contacts">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <button type="button" class="mobile-open-btn">
+      <svg class="mobile-open-btn__icon" width="20" height="18" aria-label="Переключатель мобильного меню">
+        <use href="./images/icons.svg#icon-menu"></use>
+      </svg>
+    </button>
+    <button type="button" class="header__btn" data-modal-buynow-open>
+      Buy now
+      <svg class="header__btn-icon" width="7" height="9">
+        <use href="./images/icons.svg#icon-btn"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu is-hidden">
+    <div class="mobile-menu__container">
+      <button type="button" class="mobile-close-btn">
+        <svg class="mobile-menu__icon-close" width="14" height="14">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+
+      <button type="button" class="mobile-menu__btn" data-modal-buynowMob-open>
+        Buy now
+        <svg class="mobile-menu__btn-icon" width="7" height="9">
+          <use href="./images/icons.svg#icon-btn"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu__wrap">
+      <ul class="mobile-menu__list list">
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link link curent" href=".">Home</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link link" href="#advantages">About us</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link link" href="#about">How it’s made?</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link link" href="#products">Our products</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link link" href="#contacts">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<section class="hero">
+  <div class="container hero__container">
+    <div class="hero__wrap">
+      <div class="hero__banner">
+        <h1 class="hero__title">
+          ice cream <br />
+          made with <br />
+          <span>passion</span>
+        </h1>
+        <ul class="hero__list">
+          <li class="hero__item">
+            <a href="#products" class="hero__btn">
+              Products
+            </a>
+          </li>
+          <li class="hero__item">
+            <a href="#about" class="hero__btn">
+              How it’s made?
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="hero__content">
+
+
+        <picture>
+          <source srcset="./images/heder-2.png 1x, ./images/heder-2@2x.png 2x" media="(min-width: 1200px)" />
+          <source srcset="
+                ./images/heder-2-tablet.png    1x,
+                ./images/heder-2-tablet@2x.png 2x
+              " media="(min-width: 768px)" />
+          <img class="content__img-milk animate__animated animate__backInLeft" src="./images/heder-2.png" alt="milk"
+            width="213" height="216" />
+        </picture>
+        <div class="content__wrap">
+          <p class="content__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et
+          </p>
+          <button type="button" class="content__text-btn" data-modal-open-hero>
+            <svg class="text-btn_svg" width="10" height="9">
+              <use href="./images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero__representative">
+      <div class="content__fon">
+        <div class="content__ellips"></div>
+        <picture>
+          <source srcset="./images/heder-3.png 1x, ./images/heder-3@2x.png 2x" media="(min-width: 1200px)" />
+          <source srcset="
+              ./images/heder-3-tablet.png    1x,
+              ./images/heder-3-tablet@2x.png 2x
+            " media="(min-width: 768px)" />
+          <source srcset="
+              ./images/heder-3-mobile.png    1x,
+              ./images/heder-3-mobile@2x.png 2x
+            " media="(min-width: 320px)" />
+          <img class="content__img" src="./images/heder-3-mobile.png" alt="ice" width="170" height="410" />
+        </picture>
+        <picture>
+          <source srcset="./images/heder-1.png 1x, ./images/heder-1@2x.png 2x" media="(min-width: 1200px)" />
+          <source srcset="
+              ./images/heder-1-tablet.png    1x,
+              ./images/heder-1-tablet@2x.png 2x
+            " media="(min-width: 768px)" />
+          <img class="content__img-girl animate__animated animate__rotateInUpRight" src="./images/heder-1-tablet.png"
+            alt="girl" width="190" height="150" />
+        </picture>
+      </div>
+
+      <div class="representative">
+        <ul class="representative__list list">
+          <li class="representative__item">
+            <div class="representative__top-text">
+              16
+            </div>
+            <div class="representative__poit"></div>
+            <p class="representative__text">cafes</p>
+          </li>
+
+          <li class="representative__item">
+            <p class="representative__top-text">23
+            <div class="representative__poit"></div>
+            </p>
+            <p class="representative__text">food trucks</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

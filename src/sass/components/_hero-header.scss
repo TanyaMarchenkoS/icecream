@@ -1,0 +1,608 @@
+.header {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    @include device(false, $tablet) {
+      width: 100%;
+    }
+    @include device($tablet) {
+      padding-top: 32px;
+    }
+    @include device($desktop) {
+      padding-top: 37;
+    }
+  }
+
+  &__btn {
+    display: none;
+    @include device($tablet) {
+      margin-left: 32px;
+      display: block;
+      font-family: inherit;
+      @include font-set(16px, 700, 1.31, false, $accent-color);
+      align-items: center;
+      text-align: center;
+      padding: 5px;
+      height: 44px;
+      min-width: 159px;
+      background-color: $primary-white;
+      border-radius: 22px;
+      border: none;
+      cursor: pointer;
+      transition: background-color $transition-active;
+      &:hover,
+      &:focus {
+        background-color: $second-btn-color;
+      }
+      &-icon {
+        margin-left: 12px;
+      }
+    }
+    @include device($desktop) {
+      margin-left: auto;
+    }
+  }
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__list {
+    display: none;
+    @include device($desktop) {
+      display: flex;
+      margin-left: 128px;
+    }
+  }
+  &__link {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include font-set(16px, 700, 1.31, false, $primary-white);
+    transition: color $transition-active;
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+  &__item:not(:last-child) {
+    margin-right: 35px;
+  }
+}
+.mobile-open-btn,
+.mobile-close-btn {
+  margin-left: auto;
+  display: block;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.mobile-close-btn {
+  margin-bottom: 26px;
+  stroke-width: 2px;
+  stroke: $primary-white;
+  &:hover,
+  &:focus {
+    stroke: $accent-color;
+  }
+}
+
+.mobile-open-btn {
+  stroke-width: 2px;
+  stroke: $accent-color;
+  &:hover,
+  &:focus {
+    stroke: $primary-white;
+  }
+  @include device($desktop) {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 1;
+  background-color: $menu-background;
+  right: 0;
+  top: 0;
+  min-width: 250px;
+  height: 100%;
+  opacity: 1;
+  filter: drop-shadow(-8px 0px 20px rgba(0, 0, 0, 0.25));
+  transform: translateX(0);
+  transition: transform $transition-active, opacity $transition-active,
+    visibility $transition-active, filter $transition-active;
+  @include device($tablet) {
+    min-width: 254px;
+  }
+  &.is-hidden {
+    transform: translateX(100%);
+  }
+
+  &__container {
+    padding: 20px;
+    text-align: center;
+  }
+  &__item {
+    padding-left: 20px;
+    border-bottom: 1px solid #e18298;
+    height: 42px;
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      border-top: 1px solid #e18298;
+    }
+  }
+
+  &__link {
+    @include font-set(14px, 700, 1.28, false, $primary-white);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+
+  &__btn {
+    font-family: inherit;
+    @include font-set(16px, 700, 1.31, false, $accent-color);
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    min-width: 100%;
+    height: 44px;
+    background-color: $primary-white;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 19px;
+    transition: background-color $transition-active;
+    @include device($tablet) {
+      min-width: 186px;
+    }
+    &:hover,
+    &:focus {
+      background-color: $second-btn-color;
+    }
+
+    &-icon {
+      margin-left: 16px;
+    }
+  }
+}
+.curent {
+  color: $accent-color;
+}
+
+// -------------------Hero------------------
+
+.hero {
+  background-color: $section-background;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+    height: 502px;
+    @include device(false, $tablet) {
+      width: 100%;
+    }
+    @include device($tablet) {
+      height: 416px;
+    }
+    @include device($desktop) {
+      height: 664px;
+    }
+  }
+  &__banner {
+    margin-top: 192px;
+    @include device($tablet) {
+      margin-top: 102px;
+    }
+    @include device($desktop) {
+      margin-top: 147px;
+    }
+  }
+  &__title {
+    max-width: 218px;
+    font-family: 'Titan One';
+    @include font-set(26px, 400, 1.15, 0.04em, $primary-white);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include device($tablet) {
+      max-width: 162px;
+      font-size: 22px;
+      line-height: 1.14;
+    }
+    @include device($desktop) {
+      max-width: 277px;
+      font-size: 38px;
+      line-height: 1.16;
+      margin-bottom: 24px;
+    }
+
+    & span {
+      font-size: 48px;
+      line-height: 0.965;
+      text-transform: uppercase;
+      color: $accent-color;
+      @include device($tablet) {
+        font-size: 34px;
+        line-height: 0.905em;
+      }
+      @include device($desktop) {
+        font-size: 58px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__btn {
+    min-width: 82px;
+    height: 24px;
+    @include font-set(8px, 400, 1.25, false, $accent-color);
+    text-align: center;
+    background-color: $primary-white;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-family: inherit;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 1.25;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
+    text-decoration: none;
+    @include device($desktop) {
+      font-size: 14px;
+      line-height: 1.28;
+      min-width: 138px;
+      height: 40px;
+    }
+    .hero__item:first-child & {
+      min-width: 62px;
+      transition: background-color $transition-active;
+      background-color: $accent-color;
+      color: $primary-white;
+      @include device($desktop) {
+        min-width: 107px;
+      }
+    }
+    &:hover,
+    &:focus {
+      background-color: $second-btn-color;
+    }
+  }
+
+  &__item:first-child {
+    margin-right: 8px;
+    @include device($desktop) {
+      margin-right: 12px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    @include device($desktop) {
+      margin-top: 40px;
+    }
+  }
+  &__representative {
+    margin-left: auto;
+    margin-top: 92px;
+    @include device($desktop) {
+      margin-top: 152px;
+    }
+  }
+}
+
+.representative {
+  display: none;
+  @include device($tablet) {
+    display: block;
+    margin-right: 8px;
+  }
+  @include device($desktop) {
+    margin-right: 18px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    @include device($desktop) {
+      gap: 15px;
+    }
+  }
+  &__item {
+    position: relative;
+    z-index: 1;
+  }
+  &__poit {
+    position: absolute;
+    z-index: -1;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    right: -8px;
+    top: -1px;
+    background-color: $primary-white;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    @include device($desktop) {
+      display: block;
+      width: 30px;
+      height: 30px;
+      right: -18px;
+      top: -4px;
+    }
+  }
+  &__top-text {
+    font-family: 'Titan One';
+    @include font-set(28px, 400, 1.14, 0.04em, $accent-color);
+    text-align: right;
+    text-transform: uppercase;
+    @include device($desktop) {
+      display: block;
+      font-size: 46px;
+      line-height: 1.15;
+    }
+  }
+
+  &__text {
+    @include font-set(8px, 400, 1.25, false, $primary-white);
+    text-align: right;
+    @include device($desktop) {
+      font-size: 14px;
+      line-height: 1.28;
+    }
+  }
+}
+
+.content {
+  &__img-milk {
+    display: none;
+    @include device($tablet) {
+      display: block;
+      width: 152px;
+      height: 154px;
+    }
+    @include device($desktop) {
+      display: block;
+      width: 213px;
+      height: 216px;
+    }
+  }
+  &__wrap {
+    display: none;
+    @include device($tablet) {
+      display: block;
+    }
+  }
+  &__text {
+    max-width: 114px;
+    @include font-set(8px, 400, 1.5, false, $primary-white);
+    margin-bottom: 7px;
+
+    @include device($desktop) {
+      max-width: 200px;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
+  &__text-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+    background-color: $primary-white;
+    transition: background-color $transition-active;
+    &:hover,
+    &:focus {
+      background-color: $second-btn-color;
+    }
+    @include device($desktop) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+  &__ellips {
+    position: absolute;
+    z-index: -1;
+    width: 346px;
+    height: 344px;
+    right: -36px;
+    top: 83px;
+    border-radius: 50%;
+    background-color: $accent-background;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation: zoomIn 1s, circling 20s linear 1s infinite;
+    @include device($tablet) {
+      width: 335px;
+      height: 333px;
+      top: 43px;
+      left: 248px;
+    }
+    @include device($desktop) {
+      width: 534px;
+      height: 534px;
+      top: 54px;
+      left: 517px;
+    }
+  }
+  &__img {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 171px;
+    height: 410px;
+    top: 92px;
+    right: 57px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation: fadeInUp 1s, pulsation 4s linear 1s infinite;
+
+    @include device($tablet) {
+      width: 143px;
+      height: 336px;
+      top: 80px;
+      left: 322px;
+    }
+    @include device($desktop) {
+      width: 236px;
+      height: 557px;
+      top: 108px;
+      left: 636px;
+    }
+  }
+  &__img-girl {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    visibility: visible;
+    width: 190px;
+    height: 150px;
+    top: 266px;
+    left: 546px;
+    @include device($tablet) {
+      display: block;
+    }
+    @include device($desktop) {
+      width: 304px;
+      height: 241px;
+      top: 423px;
+      left: 880px;
+    }
+  }
+}
+
+.text-btn_svg {
+  display: none;
+  fill: $accent-color;
+  @include device($tablet) {
+    display: block;
+  }
+}
+
+@keyframes pulsation {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes circling {
+  0% {
+    transform: rotate(0deg) translatex(0) rotate(0deg);
+  }
+  12.5% {
+    transform: rotate(45deg) translatex(45px) rotate(-45deg);
+  }
+  25% {
+    transform: rotate(90deg) translatex(0) rotate(-90deg);
+  }
+  37.5% {
+    transform: rotate(135deg) translatex(-45px) rotate(-135deg);
+  }
+  50% {
+    transform: rotate(180deg) translatex(0) rotate(-180deg);
+  }
+  62.5% {
+    transform: rotate(225deg) translatex(45px) rotate(-225deg);
+  }
+  75% {
+    transform: rotate(270deg) translatex(0) rotate(-270deg);
+  }
+  87.5% {
+    transform: rotate(315deg) translatex(-45px) rotate(-315deg);
+  }
+  100% {
+    transform: rotate(360deg) translatex(0) rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}

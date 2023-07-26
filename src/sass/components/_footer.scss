@@ -1,0 +1,187 @@
+.footer {
+  background-color: $section-secondary-background;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  @include device($desktop) {
+    padding-top: 60px;
+  }
+}
+.footer__container {
+  @include device($tablet) {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 16px;
+  }
+}
+
+.slogan {
+  font-family: Titan One;
+  width: 234px;
+
+  @include device(false, $mobile - 1) {
+    width: 80%;
+  }
+  @include device($tablet) {
+    width: 340px;
+  }
+  @include device($desktop) {
+    width: 484px;
+  }
+}
+
+.footer__slogan {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  @include font-set(false, 400, false, false, false);
+}
+
+.slogan__secondary {
+  @include font-set(18px, false, calc(21 / 18), false, $accent-background);
+  margin-bottom: 16px;
+  @include device($tablet) {
+    @include font-set(26px, false, calc(30 / 26), 0.04em, false);
+    margin-bottom: 12px;
+  }
+  @include device($desktop) {
+    @include font-set(30px, false, calc(34 / 30), 0.04em, false);
+    margin-bottom: 16px;
+  }
+}
+
+.slogan__primary {
+  @include font-set(34px, false, calc(39 / 34), 0.04em, $accent-color);
+
+  @include device($tablet) {
+    @include font-set(48px, false, calc(55 / 48), 0.06em, false);
+  }
+  @include device($desktop) {
+    @include font-set(58px, false, calc(66 / 58), 0.06em, false);
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer__social {
+  margin-bottom: 40px;
+
+  @include device($tablet) {
+    margin-top: 60px;
+  }
+  @include device($desktop) {
+    margin-top: 12px;
+  }
+}
+
+.social__item + .social__item {
+  margin-left: 28px;
+  @include device($tablet) {
+    margin-left: 30px;
+  }
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: $fill-icons;
+  transition: background-color $transition-active;
+
+  @include device($tablet) {
+    width: 34px;
+    height: 34px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+.social__icon {
+  width: 20px;
+  height: 20px;
+  fill: $primary-white;
+}
+
+.address {
+  @include font-set(12px, 700, 186%, false, false);
+
+  @include device($tablet, false) {
+    @include font-set(14px, false, false, false, false);
+  }
+  @include device($desktop, false) {
+    @include font-set(16px, false, false, 0.02em, false);
+  }
+}
+
+.footer__address {
+  margin-bottom: 40px;
+  @include device($desktop, false) {
+    margin-bottom: 60px;
+  }
+}
+
+.address__label {
+  text-align: right;
+  font-style: normal;
+}
+
+.address__link {
+  display: inline-block;
+  margin-left: 3px;
+  text-decoration: none;
+  color: $accent-color;
+}
+
+.copy {
+  border-top: 1px solid $border-primary-color;
+  padding: 15px 20px 0px;
+  text-align: center;
+  @include font-set(14px, 700, 152%, false, $contacts-color);
+
+  @include device($tablet, false) {
+    display: flex;
+    justify-content: center;
+  }
+}
+.copy__item + .copy__item {
+  @include device($tablet, false) {
+    margin-left: 5px;
+  }
+}
+.button-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 11px 15px;
+  text-decoration: none;
+  background-color: $accent-btn-color;
+  color: $primary-white;
+  border-radius: 22px;
+  opacity: 0.3;
+  transition: opacity $transition-active;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+  &:hover .button-to-top__icon,
+  &:focus .button-to-top__icon {
+    transform: rotate(-90deg);
+  }
+}
+.button-to-top__icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  fill: $primary-white;
+  transition: transform $transition-active;
+  z-index: 100;
+}

@@ -1,0 +1,49 @@
+<div class="backdrop__buynow is-hidden" data-modal-buynow>
+  <div class="modal__buynow">
+    <button
+      type="button"
+      class="modal__buynow__closeButton"
+      data-modal-buynow-close
+    >
+       <svg width="20" height="20" class="modal__buy-now__closeicon">
+        <use href="./images/icons.svg#contacts-close-icon"></use>
+      </svg>
+    </button>
+    <div class="feedback">
+      <p class="feedback__title">Leave your details, we will call you back</p>
+      <form class="js-speaker-form feedback__form">
+        <label class="feedback__block">
+          <span class="feedback__text">Name</span>
+
+          <input type="text" name="Name" class="feedback__input" required
+        /></label>
+
+        <label class="feedback__block"
+          ><span class="feedback__text">Phone</span>
+
+          <input
+            type="tel"
+            name="Phone-number"
+            class="feedback__input"
+            required
+        /></label>
+
+        <label class="feedback__block"
+          ><span class="feedback__text">E-mail</span>
+
+          <input type="email" name="email" class="feedback__input" required />
+        </label>
+
+        <label class="feedback__block"
+              ><span class="feedback__text">Comments</span>
+              <textarea
+                name="comments"
+                placeholder="Here we go..."
+                class="feedback__comments"
+              ></textarea>
+            </label>
+        <button type="submit" class="modal__btn">Send</button>
+      </form>
+    </div>
+  </div>
+</div>

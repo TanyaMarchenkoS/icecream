@@ -1,0 +1,23 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  @include device($mobile) {
+    max-width: $mobile;
+  }
+  @include device($tablet) {
+    max-width: $tablet;
+    padding: 0 32px;
+  }
+  @include device($desktop) {
+    max-width: $desktop;
+    padding: 0 16px;
+  }
+}
